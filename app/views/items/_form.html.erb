@@ -1,0 +1,31 @@
+<%= form_with(model: item) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <ul>
+        <% item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, placeholder: 'Nama Barang', class:'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :item_type_id %>
+    <%= form.select :item_type_id, ItemType.all.collect{|p| [p.name, p.id] }, {}, {class:'form-control'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.select :customer_id, Customer.all.collect{|p| [p.name, p.id] }, {}, {class:'form-control'} %>
+  </div>
+
+  <div class="actions mt-5">
+    <%= form.submit 'Simpan', class:'btn btn-success' %>
+  </div>
+<% end %>

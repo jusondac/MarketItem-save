@@ -1,0 +1,19 @@
+<%= form_with(model: item_variant) do |form| %>
+  <% if item_variant.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <p><%= pluralize(item_variant.errors.count, "error") %> prohibited this item_variant from being saved:</p>
+      <% item_variant.errors.each do |error| %>
+        <%= error.full_message %><br>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:'form-control', placeholder:'Name' %>
+  </div>
+
+  <div class="actions mt-5">
+    <%= form.submit 'Simpan', class:'btn btn-success'%>
+  </div>
+<% end %>

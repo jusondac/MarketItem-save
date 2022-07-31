@@ -1,0 +1,3 @@
+class ScheduleTakeKeep < ApplicationRecord
+
+end

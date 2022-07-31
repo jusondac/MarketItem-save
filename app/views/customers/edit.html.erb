@@ -1,0 +1,16 @@
+<div class="container pt-5">
+  <div class="card" style="width: 30rem;">
+    <div class="card-body">
+      <h5 class="card-title bg-primary text-white">Editing Customer</h5>
+      <%= render 'form', customer: @customer %>
+      <div class="row mt-3">
+        <div class="col">
+          <%= link_to 'Show', @customer, class:'btn btn-primary' %>
+        </div>
+        <div class="col">
+          <%= link_to 'Back', customers_path, class:'btn btn-secondary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

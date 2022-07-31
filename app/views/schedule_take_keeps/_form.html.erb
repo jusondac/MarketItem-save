@@ -1,0 +1,22 @@
+<%= form_with(model: schedule_take_keep) do |form| %>
+  <% if schedule_take_keep.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(schedule_take_keep.errors.count, "error") %> prohibited this schedule_take_keep from being saved:</h2>
+
+      <ul>
+        <% schedule_take_keep.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :daily_take_keep_id %>
+    <%= form.text_field :daily_take_keep_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

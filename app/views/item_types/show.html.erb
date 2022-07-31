@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="card" style="width: 50rem;">
+    <div class="card-body">
+      <h5 class="card-title bg-primary text-white">Detail Tipe Item</h5>
+      <div class="row">
+        <div class="col">Nama</div>
+        <div class="col">: <%= @item_type.name %></div>
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+          <%= link_to 'Edit', edit_item_type_path(@item_type), class:'btn btn-success' %>
+        </div>
+        <div class="col">
+          <%= link_to 'Back', item_types_path, class:'btn btn-secondary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

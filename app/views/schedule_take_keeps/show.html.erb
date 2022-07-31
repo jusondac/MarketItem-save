@@ -1,0 +1,86 @@
+<div class="row">
+  <div class="col-3 me-4">
+    <div class="card border-primary border-3" style="width: 16rem;">
+      <div class="card-body text-center bg-primary">
+        <h6 class="card-subtitle mb-2 text-white"><%= @schedule_take_keep.date.strftime("%A") %></h6>
+        <h1 class="text-white display-1"><%= @schedule_take_keep.date.strftime("%d") %></h1>
+      </div>
+      <div class="row m-1">
+        <div class="col">
+          <%= link_to 'Edit', edit_schedule_take_keep_path(@schedule_take_keep), class:'btn btn-sm btn-success' %>
+        </div>
+        <div class="col">
+          <%= link_to 'Back', :back, class:'btn btn-sm btn-primary' %>
+        </div>
+        <button type="button" class="mt-1 btn btn-danger" name="button">Done</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <span class="h4 bg-dark rounded text-white p-1">Night</span>
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-4">
+    <span class="h4 bg-warning rounded text-white p-1">Morning</span>
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

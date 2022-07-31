@@ -1,0 +1,23 @@
+<h3>Bulan Ini, <%= Date.today.strftime("%d %B %Y") %></h3>
+<% if @schedule_take_keeps.empty? %>
+  <h5 class="text-muted">sorry, seems you have no report for this month :(</h5>
+<% else %>
+  <div class="row-cus">
+    <% (@schedule_take_keeps.first.date.wday - 1).times do  %>
+      <div class="box border"></div>
+    <% end %>
+    <% @schedule_take_keeps.each do |schedule| %>
+      <div class="box text-center border d-flex justify-content-center align-items-center">
+        <div class="date">
+          <span><%= schedule.date.strftime("%d") %></span><br>
+        </div>
+        <%= day_of(schedule.date) %>
+        <% if done?(schedule) %>
+          <%= link_to 'See', schedule, class:'btn btn-sm btn-success', style:'width: 80%' %>
+        <% else %>
+          <%= link_to 'Check', schedule, class:'btn btn-sm btn-primary', style:'width: 80%' %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

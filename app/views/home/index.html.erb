@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="greeting">
+    <h1>Welcome to Market app.</h1>
+  </div>
+  <% if user_signed_in? %>
+    <h4 class="text-muted">You can check any your Items or Owner inside this App.</h4>
+    <div class="row mt-5">
+      <div class="card m-3" style="width: 15rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title bg-primary text-white" style="width: 10rem;">
+            <i class="fas fa-box me-3"></i>
+            <span>Barang</span>
+          </h5>
+          <h1><%= Item.all.count %></h1>
+          <small class="text-muted">Jumlah Barang</small>
+        </div>
+      </div>
+      <div class="card m-3" style="width: 15rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title bg-primary text-white" style="width: 10rem;">
+            <i class="fas fa-users me-3"></i>
+            <span>Customer</span>
+          </h5>
+          <h1><%= Customer.all.count %></h1>
+          <small class="text-muted">Jumlah Customer</small>
+        </div>
+      </div>
+      <div class="card m-3" style="width: 15rem;">
+        <div class="card-body text-center">
+          <h5 class="card-title bg-primary text-white" style="width: 10rem;">
+            <i class="fas fa-box me-3"></i>
+            <span>Barang</span>
+          </h5>
+          <h1><%= Item.all.count %></h1>
+          <small class="text-muted">Jumlah Barang</small>
+        </div>
+      </div>
+    </div>
+
+  <% else %>
+    <span>Do you have any account here? Lets sign up or sign if you have some</span>
+    <div class="row">
+      <div class="col">
+        <%= link_to "Sign In", user_session_path, class:'btn btn-primary' %>
+      </div>
+      <div class="col">
+        <%= link_to "Register", new_user_registration_path, class:'btn btn-success' %>
+      </div>
+    </div>
+  <% end %>
+</div>

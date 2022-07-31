@@ -1,0 +1,9 @@
+<div class="container pt-5">
+  <div class="card" style="width: 30rem;">
+    <div class="card-body">
+      <h5 class="card-title bg-primary text-white">New Item</h5>
+      <%= render 'form', item: @item %>
+      <%= link_to "Back", items_path, class:'mt-4 btn btn-secondary' %>
+    </div>
+  </div>
+</div>

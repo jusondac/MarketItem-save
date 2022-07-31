@@ -1,0 +1,31 @@
+<div class="container pt-5">
+  <div class="card" style="width: 55rem;">
+    <div class="card-body">
+      <h5 class="card-title bg-primary text-white">Item</h5>
+      <%= link_to 'New Item', new_item_path, class:'btn btn-success' %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nama</th>
+            <th scope="col">Pemilik</th>
+            <th scope="col">Tipe Barang</th>
+            <th colspan="3" class="text-center">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @items.each do |item| %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.user %></td>
+              <td><%= item.tipe_barang %></td>
+              <td><%= link_to 'Show', item %></td>
+              <td><%= link_to 'Edit', edit_item_path(item) %></td>
+              <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>

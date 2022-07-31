@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="card" style="width: 50rem;">
+    <div class="card-body">
+      <h5 class="card-title bg-primary text-white">Detail Customers</h5>
+      <div class="row">
+        <div class="col">Nama</div>
+        <div class="col">: <%= @customer.name %></div>
+      </div>
+      <div class="row">
+        <div class="col">Barang</div>
+        <div class="col customer-items">
+          <ul>
+            <% @customer.items.each do |item| %>
+              <li>
+                => <%= item.name %> - <%= item.tipe_barang %> <%= link_to "See", item_path(item) %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+          <%= link_to 'Edit', edit_customer_path(@customer), class:'btn btn-success' %>
+        </div>
+        <div class="col">
+          <%= link_to 'Back', customers_path, class:'btn btn-secondary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
