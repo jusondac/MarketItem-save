@@ -60,3 +60,6 @@ gem "net-smtp", "~> 0.3.1", require: false
 gem "devise", "~> 4.8"
 
 gem "awesome_print", "~> 1.9"
+
+gem "net-pop", "~> 0.1.1", require: false
+
