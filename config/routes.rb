@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :schedule_take_keeps
+  resources :schedule_take_keeps do
+    collection do
+      get :create_schedule
+    end
+  end
   resources :daily_take_keeps
   resources :item_variants
   resources :item_types

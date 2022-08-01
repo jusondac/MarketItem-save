@@ -52,6 +52,10 @@ a {
     height:6rem;
     display: flex;
     flex-direction: column;
+    transition: all 200ms ease;
+    &:hover {
+      background: #ddd;
+    }
     &.border {
       border: 1px solid #fff !important;
     }

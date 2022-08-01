@@ -1,6 +1,7 @@
 <h3>Bulan Ini, <%= Date.today.strftime("%d %B %Y") %></h3>
-<% if @schedule_take_keeps.empty? %>
+<% if @schedule_take_keeps.nil? || @schedule_take_keeps.empty? %>
   <h5 class="text-muted">sorry, seems you have no report for this month :(</h5>
+  <%= link_to "Create Schedule",  create_schedule_schedule_take_keeps_path, class:'btn btn-primary'%>
 <% else %>
   <div class="row-cus">
     <% (@schedule_take_keeps.first.date.wday - 1).times do  %>
@@ -18,6 +19,10 @@
           <%= link_to 'Check', schedule, class:'btn btn-sm btn-primary', style:'width: 80%' %>
         <% end %>
       </div>
+    <% end %>
+
+    <% (7 - @schedule_take_keeps.last.date.wday).times do  %>
+      <div class="box border"></div>
     <% end %>
   </div>
 <% end %>

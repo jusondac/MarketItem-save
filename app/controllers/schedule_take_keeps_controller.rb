@@ -3,7 +3,20 @@ class ScheduleTakeKeepsController < ApplicationController
 
   # GET /schedule_take_keeps or /schedule_take_keeps.json
   def index
-    @schedule_take_keeps = ScheduleTakeKeep.all.order(:date)
+    @schedule_take_keeps = ScheduleTakeKeep.current_month.order(:date)
+  end
+
+  def create_schedule
+    start       = Date.today.beginning_of_month
+    finish      = Date.today.end_of_month
+    dates       = (start..finish).to_a
+    dates.each do |date|
+      ScheduleTakeKeep.create(date: date)
+    end
+    respond_to do |format|
+      format.html { redirect_to schedule_take_keeps_path, notice: "Schedule has been created" }
+      format.json { render :show, status: :created, location: @schedule_take_keep }
+    end
   end
 
   # GET /schedule_take_keeps/1 or /schedule_take_keeps/1.json
